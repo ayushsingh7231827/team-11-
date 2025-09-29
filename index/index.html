@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patanjali Ayurved - Pure Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pat-green': '#4A7C59',
+                        'pat-beige': '#F5F5DC',
+                        'pat-brown': '#8B4513',
+                        'pat-light': '#FFF8DC',
+                        'pat-dark': '#2C5F2D',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(255, 248, 220, 0.8), rgba(245, 245, 220, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23F5F5DC"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%234A7C59" stroke-width="1" stroke-opacity="0.1"/></svg>');
+            background-size: cover;
+        }
+
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card {
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(139, 69, 19, 0.15);
+        }
+
+        .leaf-pattern {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10,2 Q15,5 15,10 Q10,15 5,10 Q5,5 10,2" fill="none" stroke="%234A7C59" stroke-width="0.5" stroke-opacity="0.2"/></svg>');
+        }
+
+        .nav-shadow {
+            box-shadow: 0 2px 15px rgba(139, 69, 19, 0.1);
+        }
+
+        .carousel-container {
+            scroll-behavior: smooth;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-pat-beige text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white nav-shadow fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-pat-green font-bold text-xl md:text-2xl">पतंजलि</span>
+                        <span class="ml-2 text-pat-brown font-semibold hidden md:block">AYURVED</span>
+                    </div>
+                    <div class="hidden md:ml-10 md:flex md:space-x-8">
+                        <a href="#"
+                            class="border-b-2 border-pat-green text-pat-dark font-medium px-1 pt-1 text-sm">Home</a>
+                        <a href="https://www.patanjaliayurved.net/category/natural-health-care/1"
+                            class="border-transparent hover:border-pat-green border-b-2 text-gray-600 hover:text-pat-dark px-1 pt-1 font-medium text-sm">Products</a>
+                        <a href="https://www.patanjaliayurved.net/category/natural-personal-care/8"
+                            class="border-transparent hover:border-pat-green border-b-2 text-gray-600 hover:text-pat-dark px-1 pt-1 font-medium text-sm">Ayurveda</a>
+                        <a href="https://www.patanjaliayurved.net/category/digestives/138"
+                            class="border-transparent hover:border-pat-green border-b-2 text-gray-600 hover:text-pat-dark px-1 pt-1 font-medium text-sm">About</a>
+                        <a href="https://www.patanjaliayurved.net/contact"
+                            class="border-transparent hover:border-pat-green border-b-2 text-gray-600 hover:text-pat-dark px-1 pt-1 font-medium text-sm">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:ml-4 md:flex md:items-center space-x-4">
+                        <button class="text-gray-600 hover:text-pat-green">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="text-gray-600 hover:text-pat-green">
+                            <i class="fas fa-user"></i>
+                        </button>
+                        <button class="text-gray-600 hover:text-pat-green relative">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span
+                                class="absolute -top-2 -right-2 bg-pat-green text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
+                        </button>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button class="text-gray-600">
+                            <i class="fas fa-shopping-cart mx-4"></i>
+                        </button>
+                        <button class="text-gray-600">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-bg pt-24 md:pt-32 pb-16 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                    <h1 class="text-3xl md:text-5xl font-bold text-pat-dark text-shadow mb-4">Pure Ayurveda for Modern
+                        Wellness</h1>
+                    <p class="text-lg text-pat-brown mb-8 max-w-md mx-auto md:mx-0">Discover the ancient wisdom of
+                        Ayurveda with Patanjali's authentic and natural products for complete wellness.</p>
+                    <div
+                        class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                        <a href="https://www.patanjaliayurved.net/category/biscuits-and-cookies/3"
+                            class="bg-pat-green hover:bg-pat-dark text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">Shop
+                            Now</a>
+                        <a href="https://www.patanjaliayurved.net/category/hair-care/24"
+                            class="bg-white hover:bg-pat-light text-pat-green font-semibold py-3 px-6 rounded-lg shadow-md border border-pat-green transition duration-300">Explore
+                            Categories</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="carousel-container flex overflow-x-auto snap-x snap-mandatory rounded-xl shadow-2xl"
+                            style="scrollbar-width: none;">
+                          <a href="https://www.patanjaliayurved.net/category/biscuits-and-cookies/3">
+    <div class="flex-shrink-0 w-full snap-start">
+        <img src="g.png" alt="Pure Patanjali honey with natural ingredients"
+            class="w-full h-auto rounded-xl">
+    </div>
+</a>
+
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Categories -->
+    <section id="categories" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-pat-dark mb-4">Our Ayurvedic Categories</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore our wide range of authentic Ayurvedic
+                    products made with natural ingredients for holistic wellness.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div
+                    class="category-card bg-pat-light rounded-xl p-6 text-center border border-pat-beige cursor-pointer">
+                    <div
+                        class="w-20 h-20 mx-auto mb-4 rounded-full bg-white flex items-center justify-center shadow-inner">
+                        <img src="a.webp"
+                            alt="Patanjali herbal soaps and personal care"
+                            class="w-16 h-16 object-contain rounded-full">
+                    </div>
+                    <h3 class="font-semibold text-pat-dark text-lg mb-2">Soaps & Personal Care</h3>
+                    <p class="text-gray-600 text-sm mb-4">Natural cleansers for your skin and hair</p>
+                    <a href="https://www.patanjaliayurved.net/search/soaps" class="text-pat-green font-medium text-sm flex items-center justify-center">
+                        Explore <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+                <div
+                    class="category-card bg-pat-light rounded-xl p-6 text-center border border-pat-beige cursor-pointer">
+                    <div
+                        class="w-20 h-20 mx-auto mb-4 rounded-full bg-white flex items-center justify-center shadow-inner">
+                        <img src="c.jpg"
+                            alt="Pure Patanjali honey products" class="w-16 h-16 object-contain rounded-full">
+                    </div>
+                    <h3 class="font-semibold text-pat-dark text-lg mb-2">Pure Honey</h3>
+                    <p class="text-gray-600 text-sm mb-4">100% natural honey with wellness benefits</p>
+                    <a href="https://www.patanjaliayurved.net/product/natural-health-care/honey/patanjali-honey/696" class="text-pat-green font-medium text-sm flex items-center justify-center">
+                        Explore <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+                <div
+                    class="category-card bg-pat-light rounded-xl p-6 text-center border border-pat-beige cursor-pointer">
+                    <div
+                        class="w-20 h-20 mx-auto mb-4 rounded-full bg-white flex items-center justify-center shadow-inner">
+                        <img src="d.jpg"
+                            alt="Patanjali Chyawanprash and herbal supplements"
+                            class="w-16 h-16 object-contain rounded-full">
+                    </div>
+                    <h3 class="font-semibold text-pat-dark text-lg mb-2">Herbal Medicines</h3>
+                    <p class="text-gray-600 text-sm mb-4">Traditional formulations for health & immunity</p>
+                    <a href="https://www.patanjaliayurved.net/product/ayurvedic-medicine/vati/divya-livogrit-tablet-60-n/3434" class="text-pat-green font-medium text-sm flex items-center justify-center">
+                        Explore <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+                <div
+                    class="category-card bg-pat-light rounded-xl p-6 text-center border border-pat-beige cursor-pointer">
+                    <div
+                        class="w-20 h-20 mx-auto mb-4 rounded-full bg-white flex items-center justify-center shadow-inner">
+                        <img src="e.jpg"
+                            alt="Patanjali natural fruit juices and drinks"
+                            class="w-16 h-16 object-contain rounded-full">
+                    </div>
+                    <h3 class="font-semibold text-pat-dark text-lg mb-2">Natural Juices</h3>
+                    <p class="text-gray-600 text-sm mb-4">Nutrient-rich beverages for daily health</p>
+                    <a href="https://www.patanjaliayurved.net/product/natural-food-products/corn-flakes/patanjali-muesli-fruit-nut/854" class="text-pat-green font-medium text-sm flex items-center justify-center">
+                        Explore <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Products -->
+    <section id="products" class="py-16 leaf-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-pat-dark mb-4">Featured Ayurvedic Products</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Our most popular products based on ancient Ayurvedic
+                    formulations</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="h.jpg"
+                            alt="Patanjali Aloe Vera soap with natural ingredients" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-pat-dark mb-1">Aloe Vera Soap</h3>
+                        <p class="text-sm text-gray-600 mb-3">For glowing and moisturized skin</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-pat-green font-bold">₹99</span>
+                            <button
+                                class="bg-pat-green hover:bg-pat-dark text-white py-2 px-4 rounded-lg text-sm transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="c.jpg"
+                            alt="Patanjali Pure Honey with natural honeycomb" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-pat-dark mb-1">Pure Honey</h3>
+                        <p class="text-sm text-gray-600 mb-3">100% natural with wellness benefits</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-pat-green font-bold">₹199</span>
+                            <button
+                                class="bg-pat-green hover:bg-pat-dark text-white py-2 px-4 rounded-lg text-sm transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="d.jpg"
+                            alt="Patanjali Chyawanprash with Amla and herbs" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-pat-dark mb-1">Chyawanprash</h3>
+                        <p class="text-sm text-gray-600 mb-3">Immunity boosting herbal formulation</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-pat-green font-bold">₹249</span>
+                            <button
+                                class="bg-pat-green hover:bg-pat-dark text-white py-2 px-4 rounded-lg text-sm transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="e.jpg"
+                            alt="Patanjali Amla Juice with fresh amla fruits" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-pat-dark mb-1">Amla Juice</h3>
+                        <p class="text-sm text-gray-600 mb-3">Rich in Vitamin C and antioxidants</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-pat-green font-bold">₹149</span>
+                            <button
+                                class="bg-pat-green hover:bg-pat-dark text-white py-2 px-4 rounded-lg text-sm transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://www.patanjaliayurved.net/search/honey"
+                    class="inline-block bg-pat-green hover:bg-pat-dark text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300">View
+                    All Products</a>
+            </div>
+        </div>
+    </section>
+    <!-- Ayurvedic Philosophy -->
+    <section class="py-16 bg-pat-beige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="g.png"
+                        alt="Ancient Ayurvedic wisdom with herbs and manuscripts" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold text-pat-dark mb-6">The Patanjali Ayurvedic Philosophy</h2>
+                    <p class="text-gray-700 mb-4">Patanjali follows the ancient wisdom of Ayurveda, which emphasizes
+                        balance between body, mind, and spirit through natural solutions.</p>
+                    <p class="text-gray-700 mb-6">Our products are crafted using time-tested formulations with pure,
+                        natural ingredients sourced sustainably from trusted growers.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-pat-green mr-2 mt-1"><i class="fas fa-leaf"></i></span>
+                            <span class="text-gray-700">100% natural ingredients with no artificial additives</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-pat-green mr-2 mt-1"><i class="fas fa-seedling"></i></span>
+                            <span class="text-gray-700">Sustainably sourced from organic farms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-pat-green mr-2 mt-1"><i class="fas fa-heart"></i></span>
+                            <span class="text-gray-700">Formulated for holistic wellness and balance</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Newsletter -->
+    <section class="py-16 bg-pat-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Join the Patanjali Wellness Journey</h2>
+            <p class="text-pat-light mb-8 max-w-2xl mx-auto">Subscribe to our newsletter for Ayurvedic tips, new product
+                updates, and exclusive offers.</p>
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address"
+                    class="flex-grow py-3 px-4 rounded-l-lg focus:ring-2 focus:ring-pat-green focus:border-transparent text-gray-800">
+                <button
+                    class="bg-pat-green hover:bg-green-700 py-3 px-6 rounded-r-lg font-semibold transition duration-300">Subscribe</button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-pat-brown text-white pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Patanjali Ayurved</h3>
+                    <p class="text-pat-light mb-4">Bringing authenticity and purity of Ayurveda to modern wellness
+                        routines.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/Foodspatanjali/" class="text-pat-light hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/patanjaliproducts/" class="text-pat-light hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/patanjalism?lang=en" class="text-pat-light hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/@PatanjaliAyurved" class="text-pat-light hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://patanjaliayurved.org/company-overview.html" class="text-pat-light hover:text-white">About Us</a></li>
+                        <li><a href="https://www.patanjaliayurved.net/" class="text-pat-light hover:text-white">Our Products</a></li>
+                        <li><a href="https://www.patanjaliayurved.net/" class="text-pat-light hover:text-white">Ayurvedic Resources</a></li>
+                        <li><a href="https://www.patanjaliayurved.net/store-locator" class="text-pat-light hover:text-white">Store Locator</a></li>
+                        <li><a href="https://www.patanjaliayurved.net/contact" class="text-pat-light hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.patanjaliayurved.net/category/natural-personal-care/8" class="text-pat-light hover:text-white">Personal Care</a></li>
+                        <li><a href="https://www.patanjaliayurved.net/product/natural-health-care/honey/patanjali-honey/696" class="text-pat-light hover:text-white">Pure Honey</a></li>
+                        <li><a href="https://www.patanjaliayurved.net/category/ayurvedic-medicine/4" class="text-pat-light hover:text-white">Herbal Medicines</a></li>
+                        <li><a href="https://www.patanjaliayurved.net/category/health-drinks/177" class="text-pat-light hover:text-white">Natural Juices</a></li>
+                        <li><a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjF6dbtzf2PAxV3E4MDHda2Hr0YACICCAEQAxoCc2Y&co=1&ase=2&gclid=Cj0KCQjw3OjGBhDYARIsADd-uX6eQntoG4QIYLMS_BMsBk3699lXeZmXp8x72J7eXqoJoDaGn70vov8aAuCIEALw_wcB&cid=CAASQuRoNm-NlVQ_aZpR657hB-vzyK_sfO_HNuMrk417bvlf9PRRUE27KrBtndSUSgeiHAGbyjoVmuSgAoLBt3P-q2Dasw&cce=2&category=acrcp_v1_32&sig=AOD64_3tU3dBhui6J9JT4F5-aEJ6G8RXtQ&q&nis=4&adurl&ved=2ahUKEwj1pc7tzf2PAxXS6jgGHVzcCPcQ0Qx6BAgMEAE" class="text-pat-light hover:text-white">Nutritional Supplements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-2 mt-1 text-pat-green"></i>
+                            <span class="text-pat-light">Patanjali Ayurved Ltd., Haridwar, Uttarakhand, India</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mr-2 mt-1 text-pat-green"></i>
+                            <span class="text-pat-light">1800-571-1751 , 01334-610111</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mr-2 mt-1 text-pat-green"></i>
+                            <span class="text-pat-light">customercare@orderme.co.iniayurved.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-pat-beige border-opacity-20 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-pat-light text-sm">© 2023 Patanjali Ayurved Ltd. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-pat-light hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-pat-light hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-pat-light hover:text-white text-sm">Return Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Simple carousel functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('.carousel-container');
+            const dots = document.querySelectorAll('.carousel-container + div button');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                carousel.scrollLeft = currentIndex * carousel.offsetWidth;
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('bg-pat-green');
+                        dot.classList.remove('bg-white');
+                    } else {
+                        dot.classList.remove('bg-pat-green');
+                        dot.classList.add('bg-white');
+                    }
+                });
+            }
+
+            // Auto-advance carousel
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % 3;
+                updateCarousel();
+            }, 4000);
+
+            // Dot click handlers
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
